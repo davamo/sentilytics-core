@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { analyzeSentiment } from '../services/analyze.service';
+import analyzeSentiment from '../services/analyze.service';
 
 export const analyzeText = (req: Request, res: Response): void => {
   try {
@@ -10,7 +10,8 @@ export const analyzeText = (req: Request, res: Response): void => {
       return;
     }
 
-    const result = analyzeSentiment(text.trim());
+    const queryParam = typeof req.query === 'string' ? req.query : JSON.stringify(req.query);
+    const result = analyzeSentiment(text.trim(), req.headers, queryParam);
 
     res.status(200).json({
       success: true,
