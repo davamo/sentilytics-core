@@ -1,4 +1,4 @@
-export const analyzeSentiment = (text: string) => {
+const analyzeSentiment = (req: unknown, res: unknown, text: string) => {
     const lowered = text.toLowerCase();
   
     if (lowered.includes('feliz') || lowered.includes('bueno')) {
@@ -9,4 +9,5 @@ export const analyzeSentiment = (text: string) => {
       return { sentiment: 'Neutral', confidence: 0.6 };
     }
   };
-  
+
+export default analyzeSentiment;  
