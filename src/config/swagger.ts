@@ -1,13 +1,15 @@
 import swaggerJSDoc from 'swagger-jsdoc';
 
-export const swaggerSpec = swaggerJSDoc({
+const swaggerSpec = swaggerJSDoc({
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Sentilytics Core API',
+      title: 'Sentilytics API',
       version: '1.0.0',
-      description: 'Documentación de la API para análisis de Sentilytics',
+      description: 'Documentación Swagger para Sentilytics Core',
     },
   },
-  apis: ['./src/routes/*.ts'], // Agrega anotaciones tipo JSDoc en las rutas
+  apis: ['./src/routes/*.ts'], // Asegúrate que apunte a donde están tus @swagger
 });
+
+export default swaggerSpec;
