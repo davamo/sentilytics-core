@@ -106,7 +106,7 @@ expect(res.body.data.sentiment).toBe('Positivo');
 - [ ] Guardar historial de análisis en MongoDB
 - [ ] Subir y analizar imágenes
 - [ ] Desplegar en Azure / Render / Railway
-- [ ] Documentar API con Swagger
+- [x] Documentar API con Swagger ✅
 
 ---
 
